@@ -1,0 +1,25 @@
+        // Snow effect
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            document.body.appendChild(snowflake);
+
+            let size = Math.random() * 10 + 5; // Random size
+            let startLeft = Math.random() * window.innerWidth;
+            let duration = Math.random() * 5 + 5; // Random fall speed
+
+            snowflake.style.left = startLeft + 'px';
+            snowflake.style.fontSize = size + 'px';
+            snowflake.style.animationDuration = duration + 's';
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, duration * 1000);
+        }
+
+        setInterval(createSnowflake, 200); // Create snowflakes continuously
+    </script>
+
+</body>
+</html>
